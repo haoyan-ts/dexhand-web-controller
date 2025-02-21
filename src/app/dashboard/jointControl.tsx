@@ -85,6 +85,11 @@ const JointControl: React.FC = () => {
         break;
       default:
         break;
+
+        // Send all joint angles to the robot
+        sendCommand(
+          `joint_angles ${joint1Angle} ${joint2Angle} ${joint3Angle} ${joint4Angle} ${joint5Angle} ${joint6Angle}`
+        );
     }
   };
 

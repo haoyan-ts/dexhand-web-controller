@@ -20,6 +20,29 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Building
+
+To build the project, follow these steps:
+
+1.  Install `buf` (if you don't have it already):
+    ```bash
+    # Example using Homebrew on macOS
+    brew install bufbuild/buf/buf
+    # Example using Ubuntu
+    sudo apt-get update && sudo apt-get install buf
+    ```
+    Refer to the official [Buf documentation](https://buf.build/docs/installation) for installation instructions for other operating systems.
+2.  Run `buf generate` to generate the necessary code from the protobuf definitions:
+    ```bash
+    buf generate
+    ```
+    This command uses the `buf.gen.yaml` file to determine how to generate the code.
+3.  Copy the generated files from `api/gen/web` to the `proto` directory:
+    ```bash
+    cp -r api/gen/web/* proto/
+    ```
+    This step makes the generated code available for use in the project.  Make sure the `proto` directory exists.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
