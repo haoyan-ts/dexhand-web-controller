@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Provider } from "jotai";
 import "./globals.css";
+import { DexHandProvider } from "../context/DexHandContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Provider>{children}</Provider>
+        <DexHandProvider>
+          <Provider>{children}</Provider>
+        </DexHandProvider>
       </body>
     </html>
   );

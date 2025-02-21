@@ -25,7 +25,7 @@ const Dashboard: React.FC = () => {
 
       <Grid2 container spacing={2} sx={{ mb: 4 }}>
         <Grid2 size={{ xs: 12, md: 3 }}>
-          <RobotStatus status={robotConnectionStatus} id={robotId} />
+          <RobotStatus />
           <RobotControlButtons />
         </Grid2>
         <Grid2 size={{ xs: 12, md: 9 }}>
